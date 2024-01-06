@@ -1,19 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
     public GameObject[] enemyPrefabs;
+    public GameManager gameManagerScript;
+    public TextMeshProUGUI waveText;
+    public int wave;
+    
     public int enemyIndex;
     public float spawnRange;
     public int enemyCount;
     public int enemyCount2;
-    private int waveNumber;
+
+    public bool CanSpawn = true;
+    public int enemyNumber;
 
     // Start is called before the first frame update
     void Start()
     {
+        gameManagerScript = GetComponent<GameManager>();
         
     }
 
@@ -24,10 +32,19 @@ public class SpawnManager : MonoBehaviour
         enemyCount2 = FindObjectsOfType<SunFlower>().Length;
         if (enemyCount == 0 && enemyCount2 == 0)
         {
-            waveNumber++;
-            SpawnEnemyWave(waveNumber);
+            wave++;
+            SpawnEnemyWave(enemyNumber);
+            UpdateWave(wave);
         }
     }
+
+    public void UpdateWave(int waveUpOne)
+    {
+        wave += waveUpOne;
+        waveText.text = "Wave: " + wave;
+    }
+
+
 
     void SpawnEnemyWave(int enemiestoSpawn)
     {
@@ -47,5 +64,10 @@ public class SpawnManager : MonoBehaviour
         Vector3 randomPos = new Vector3(spawnPosX, spawnPosY, 0);
 
         return randomPos;
+    }
+
+    void SpawnLimit ()
+    {
+
     }
 }
