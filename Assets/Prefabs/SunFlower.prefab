@@ -1590,8 +1590,7 @@ GameObject:
   - component: {fileID: 8834908401341055168}
   - component: {fileID: 8834908401341055174}
   - component: {fileID: 8834908401341055175}
-  - component: {fileID: 8834908401341055172}
-  - component: {fileID: 8834908401341055173}
+  - component: {fileID: 1502280918877463843}
   m_Layer: 0
   m_Name: SunFlower
   m_TagString: Enemy
@@ -1678,6 +1677,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   seed: {fileID: 4742985466926713059, guid: e590bcbff17329f44b7785c35717fc9e, type: 3}
   seedPos: {fileID: 8834908402129190675}
+  currentHealth: 0
+  maxHealth: 25
 --- !u!114 &8834908401341055175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1690,7 +1691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102984c0e10d2e14282c347055958e99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8834908401341055172
+--- !u!114 &1502280918877463843
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1699,24 +1700,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8528286830948700604}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9769c41a1a854134c800808a9cb05741, type: 3}
+  m_Script: {fileID: 11500000, guid: c2f291f081bdf5143bd6c78e546fc1cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
---- !u!114 &8834908401341055173
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8528286830948700604}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcb5c6f8850d6104a993a67c0942eb5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 15
-  currentHealth: 0
+  speed: 1
 --- !u!1 &8834908402129190674
 GameObject:
   m_ObjectHideFlags: 0

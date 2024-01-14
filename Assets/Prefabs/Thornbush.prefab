@@ -2171,7 +2171,7 @@ GameObject:
   - component: {fileID: 8263335122605487948}
   - component: {fileID: 8263335122605487949}
   - component: {fileID: 1306076392880416886}
-  - component: {fileID: 919132149472307168}
+  - component: {fileID: -8600516064304154253}
   m_Layer: 0
   m_Name: Thornbush
   m_TagString: Enemy
@@ -2271,7 +2271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: -25
   currentHealth: 0
---- !u!114 &919132149472307168
+--- !u!114 &-8600516064304154253
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2280,7 +2280,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9109702681065596396}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9769c41a1a854134c800808a9cb05741, type: 3}
+  m_Script: {fileID: 11500000, guid: c2f291f081bdf5143bd6c78e546fc1cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 2

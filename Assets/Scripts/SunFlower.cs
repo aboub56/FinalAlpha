@@ -5,15 +5,22 @@ using UnityEngine;
 public class SunFlower : MonoBehaviour
 {
     private float timer;
+    
     private GameObject player;
+    private Health health;
+    private WaveSpawner waveSpawner;
 
     public GameObject seed;
     public Transform seedPos;
+
+    public float currentHealth;
+    public int maxHealth;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+
     }
 
     // Update is called once per frame
@@ -33,6 +40,18 @@ public class SunFlower : MonoBehaviour
         //  timer = 0;
         //Instantiate(seed, seedPos.position, Quaternion.identity);
         //}
+    }
+
+    public void TakeDamage(float damageAmount)
+    {
+        currentHealth -= damageAmount;
+
+        if (currentHealth <= 0)
+        {
+            Destroy(gameObject);
+
+            waveSpawner.waves[waveSpawner.currentWaveIndex].enemiesLeft--;
+        }
     }
 
     //void shoot()

@@ -25,9 +25,9 @@ public class Projectiles : MonoBehaviour
     {
         Destroy(gameObject);
 
-        if (collision.gameObject.TryGetComponent<Health>(out Health healthComponent))
+        if (collision.gameObject.TryGetComponent<SunFlower>(out SunFlower sunflowerComponent))
         {
-            healthComponent.TakeDamage(1);
+            sunflowerComponent.TakeDamage(1);
         }
         Destroy(gameObject);
     }

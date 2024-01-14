@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class ThornBush : MonoBehaviour
 {
+
+    private WaveSpawner waveSpawner;
     private Health health;
+    
     public int maxHealth;
     public float currentHealth;
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
+        waveSpawner = GetComponentInParent<WaveSpawner>();
         currentHealth = maxHealth;
     }
 
@@ -21,6 +25,8 @@ public class ThornBush : MonoBehaviour
         if (currentHealth >= 0)
         {
             Destroy(gameObject);
+
+            waveSpawner.waves[waveSpawner.currentWaveIndex].enemiesLeft--;
         }
     }
 
