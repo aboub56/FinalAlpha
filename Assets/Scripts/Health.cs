@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    private GameManager gameManager;
+    
     public int maxHealth;
     public float currentHealth;
+
+    public GameManager gamerManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,9 +28,9 @@ public class Health : MonoBehaviour
 
         if (currentHealth <= 0 && gameObject.CompareTag("Player"))
         {
-            
-            gameManager.gameOver();
             Destroy(gameObject);
+
+            gamerManager.GameOver();
         }
     }
 }

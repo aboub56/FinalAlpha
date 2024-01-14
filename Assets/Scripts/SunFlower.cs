@@ -19,7 +19,10 @@ public class SunFlower : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        waveSpawner = GetComponentInParent<WaveSpawner>();
         player = GameObject.FindGameObjectWithTag("Player");
+
+        currentHealth = maxHealth;
 
     }
 

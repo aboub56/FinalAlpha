@@ -28,6 +28,12 @@ public class WaveSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (currentWaveIndex >= waves.Length)
+        {
+            Debug.Log("You survived every wave");
+            return;
+        }
+        
         if (readyToCountDown == true)
         {
             countdown -= Time.deltaTime;
@@ -52,14 +58,18 @@ public class WaveSpawner : MonoBehaviour
 
     private IEnumerator SpawnWave()
     {
-        for ( int i = 0; i < waves[currentWaveIndex].enemies.Length; i++ )
+        if (currentWaveIndex < waves.Length)
         {
-            Enemy enemy = Instantiate(waves[currentWaveIndex].enemies[i], spawnPoint.transform);
+            for (int i = 0; i < waves[currentWaveIndex].enemies.Length; i++)
+            {
+                Enemy enemy = Instantiate(waves[currentWaveIndex].enemies[i], spawnPoint.transform);
 
-            enemy.transform.SetParent(spawnPoint.transform);
+                enemy.transform.SetParent(spawnPoint.transform);
 
-            yield return new WaitForSeconds(waves[currentWaveIndex].timeToNextEnemy);
+                yield return new WaitForSeconds(waves[currentWaveIndex].timeToNextEnemy);
+            }
         }
+        
     }
 }
 

@@ -6,29 +6,23 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public bool isGameActive;
-    
-    public SpawnManager spawnManager;
-    
+
     public TextMeshProUGUI gameOverText;
+
     // Start is called before the first frame update
     void Start()
     {
-        isGameActive = true;
+        gameOverText.gameObject.SetActive(false);
     }
-
- 
-
-
-    public void gameOver()
-    {
-        
-    }
-
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void GameOver()
+    {
+        gameOverText.gameObject.SetActive(true);
     }
 }

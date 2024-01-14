@@ -36,7 +36,8 @@ public class ThornBush : MonoBehaviour
     {
         if(collision.gameObject.TryGetComponent<Health>(out Health healthComponent))
         {
-    }
-        healthComponent.TakeDamage(3);
+            healthComponent.TakeDamage(3);
+        }
+        
         }
 }

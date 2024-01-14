@@ -6,12 +6,16 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    public GameManager gameManager;
+    
 
     public float speed = 10f;
     public float jumpForce;
     public float gravityModifier;
     public bool isOnground = true;
+
+    public int maxHealth;
+    public float currentHealth;
+    
     GunX GunX;
     Health health;
 
@@ -22,6 +26,8 @@ public class PlayerController : MonoBehaviour
     {
         playerRb = GetComponent<Rigidbody>();
         Physics.gravity *= gravityModifier;
+        
+        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
@@ -49,6 +55,18 @@ public class PlayerController : MonoBehaviour
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
     }
+
+
+    public void TakeDamage(float damageAmount)
+    {
+        currentHealth -= damageAmount;
+
+        if (currentHealth < 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
 
 
     private void OnCollisionEnter(Collision collision)
