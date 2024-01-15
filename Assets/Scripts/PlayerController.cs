@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -16,9 +17,10 @@ public class PlayerController : MonoBehaviour
     public int maxHealth;
     public float currentHealth;
 
-    public bool isAlive;
+
+    private bool isDead;
     
-    private GameManager gameManager;
+    public GameManager gameManager;
     
     GunX GunX;
     Health health;
@@ -65,18 +67,21 @@ public class PlayerController : MonoBehaviour
     {
         currentHealth -= damageAmount;
 
-        if (currentHealth <= 0)
+        if (currentHealth <= 0 && !isDead)
         {
-            Destroy(gameObject);
+            isDead = true;
             gameManager.GameOver();
+            Destroy(gameObject);
+            
         }
     }
 
     private void gameEnd()
     {
-        if (gameObject == null)
+        //if (gameObject == null)
         {
-            gameManager.GameOver();
+            //gameManager.GameOver();
+            //Debug.Log("Game Over");
         }
     }
 
