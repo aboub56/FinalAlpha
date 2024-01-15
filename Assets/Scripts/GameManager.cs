@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -25,5 +26,21 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         gameOverUI.gameObject.SetActive(true);
+    }
+
+
+    public void restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void mainMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
+
+    public void quit()
+    {
+        Application.Quit();
     }
 }
