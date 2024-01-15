@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     private WaveSpawner waveSpawner;
 
     private Rigidbody enemyRb;
+    private PlayerController playerController;
     private GameObject player;
     // Start is called before the first frame update
     void Start()
@@ -21,8 +22,12 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         //Tells object to follow the players position
-        Vector3 lookDirection = (player.transform.position - transform.position).normalized;
+        if (player != null)
+        {
+            Vector3 lookDirection = (player.transform.position - transform.position).normalized;
 
-        enemyRb.AddForce(lookDirection * speed);
+            enemyRb.AddForce(lookDirection * speed);
+        }
+        
     }
 }

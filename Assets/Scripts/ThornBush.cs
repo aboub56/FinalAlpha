@@ -34,9 +34,9 @@ public class ThornBush : MonoBehaviour
     // Deals Damage when in contact with the player
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.TryGetComponent<Health>(out Health healthComponent))
+        if(collision.gameObject.TryGetComponent<PlayerController>(out PlayerController playerComponent))
         {
-            healthComponent.TakeDamage(3);
+            playerComponent.TakeDamage(3);
         }
         
         }

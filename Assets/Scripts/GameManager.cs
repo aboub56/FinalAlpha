@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameOverText.gameObject.SetActive(false);
+        
     }
 
     // Update is called once per frame
@@ -24,5 +24,6 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         gameOverText.gameObject.SetActive(true);
+        Debug.Log("Game Over");
     }
 }

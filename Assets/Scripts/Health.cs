@@ -25,12 +25,5 @@ public class Health : MonoBehaviour
             Destroy(gameObject);
             
         }
-
-        if (currentHealth <= 0 && gameObject.CompareTag("Player"))
-        {
-            Destroy(gameObject);
-
-            gamerManager.GameOver();
-        }
     }
 }

@@ -15,6 +15,10 @@ public class PlayerController : MonoBehaviour
 
     public int maxHealth;
     public float currentHealth;
+
+    public bool isAlive;
+    
+    private GameManager gameManager;
     
     GunX GunX;
     Health health;
@@ -61,9 +65,18 @@ public class PlayerController : MonoBehaviour
     {
         currentHealth -= damageAmount;
 
-        if (currentHealth < 0)
+        if (currentHealth <= 0)
         {
             Destroy(gameObject);
+            gameManager.GameOver();
+        }
+    }
+
+    private void gameEnd()
+    {
+        if (gameObject == null)
+        {
+            gameManager.GameOver();
         }
     }
 
