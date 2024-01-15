@@ -60,6 +60,12 @@ public class PlayerController : MonoBehaviour
         {
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
+
+
+        if (transform.position.y > 34)
+        {
+            transform.position = new Vector3(transform.position.x, 34, transform.position.z);
+        }
     }
 
 
