@@ -36,13 +36,6 @@ public class SunFlower : MonoBehaviour
             StartCoroutine(ShootSeedRoutine());
         }
         
-        //timer -= Time.deltaTime;
-
-        //if (timer < 2)
-        //{
-        //  timer = 0;
-        //Instantiate(seed, seedPos.position, Quaternion.identity);
-        //}
     }
 
     public void TakeDamage(float damageAmount)
@@ -65,7 +58,8 @@ public class SunFlower : MonoBehaviour
 
     IEnumerator ShootSeedRoutine()
     {
-        yield return new WaitForSeconds(4f);
+        
         Instantiate(seed, seedPos.position, Quaternion.identity);
+        yield return new WaitForSeconds(4f);
     }
 }

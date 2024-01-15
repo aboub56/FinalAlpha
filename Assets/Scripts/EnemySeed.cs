@@ -32,16 +32,17 @@ public class EnemySeed : MonoBehaviour
     {
         Destroy(gameObject);
 
-        if (collision.gameObject.TryGetComponent<Health>(out Health healthComponent))
+        if (collision.gameObject.TryGetComponent<PlayerController>(out PlayerController playerComponent))
         {
-            healthComponent.TakeDamage(1);
+            playerComponent.TakeDamage(1);
         }
         Destroy(gameObject);
     }
 
     IEnumerator DestroyRoutine()
     {
-        yield return new WaitForSeconds(5);
+        
         Destroy(gameObject);
+        yield return new WaitForSeconds(5);
     }
 }

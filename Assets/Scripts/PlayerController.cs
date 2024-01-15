@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     public int maxHealth;
     public float currentHealth;
 
+    
+
 
     private bool isDead;
     
@@ -39,6 +41,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        
+
 
         float forwardInput = Input.GetAxis("Horizontal");
         if (forwardInput > 0)

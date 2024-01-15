@@ -1445,7 +1445,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: In this game you will control a gardener in a hazmat suit. You will shoot
     your way through various waves. Use platforms your weapon that shoots Weedkiller
-    and Fertilizer to survive the horde of wild and zombie plants.
+    and Fertilizer to survive the horde of wild and zombie plants. Because because
+    if you are hit too many times you die.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
